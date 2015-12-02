@@ -23,6 +23,7 @@
 }
 
 - (void)testExample {
+    // do nothing.
 }
 
 @end

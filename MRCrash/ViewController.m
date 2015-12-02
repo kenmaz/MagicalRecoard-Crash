@@ -24,13 +24,13 @@
     //***** Run Unit Test (cmd+U) and Crash ******
     //***** If comment out the following code, Unit Test is passed without crash.
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"do somethig");
         dispatch_async(dispatch_get_main_queue(), ^{
             Magazine* magazine = [Magazine MR_createEntity];
             NSLog(@"%@", magazine);
         });
     });
     /////////////////////////////////////////////////
-    
 }
 
 @end
