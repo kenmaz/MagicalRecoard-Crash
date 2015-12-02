@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import <MagicalRecord/MagicalRecord.h>
+#import "Magazine.h"
 
 @interface ViewController ()
 
@@ -16,12 +18,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [MagicalRecord setupCoreDataStack];
+
+    //***** Run Unit Test (cmd+U) and Crash ******
+    //***** If comment out the following code, Unit Test is passed without crash.
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            Magazine* magazine = [Magazine MR_createEntity];
+            NSLog(@"%@", magazine);
+        });
+    });
+    /////////////////////////////////////////////////
+    
 }
 
 @end
