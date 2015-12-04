@@ -7,5 +7,6 @@ target 'MRCrash' do
 end
 
 target 'MRCrashTests' do
+pod 'OCMock'
 end
 
