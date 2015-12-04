@@ -7,6 +7,8 @@
 //
 
 #import <XCTest/XCTest.h>
+#import <MagicalRecord/MagicalRecord.h>
+#import "Magazine.h"
 
 @interface MRCrashTests : XCTestCase
 
@@ -23,7 +25,8 @@
 }
 
 - (void)testExample {
-    // do nothing.
+    Magazine* magazine = [Magazine MR_createEntity];
+    NSLog(@"%@", magazine);
 }
 
 @end
